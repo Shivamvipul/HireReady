@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const env = require('./config/env');
+const { ok } = require('./utils/response');
 const { apiLimiter } = require('./middleware/rateLimit');
 const { notFound, errorHandler } = require('./middleware/error');
 
@@ -15,6 +16,7 @@ app.use(cors({ origin: env.clientUrl.split(',').map((s) => s.trim()), credential
 app.use(express.json({ limit: '4mb' })); // PDF export posts rendered HTML
 app.use(cookieParser());
 if (!env.isProd) app.use(morgan('dev'));
+app.get('/', (req, res) => ok(res, { name: 'HireRead API', status: 'up', health: '/api/health' }));
 app.use('/api', apiLimiter);
 
 app.use('/api/auth', require('./routes/authRoutes'));
