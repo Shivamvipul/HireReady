@@ -32,6 +32,27 @@ const friendlyApiError = (e) => {
   return null;
 };
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const isRetryable = (e) => e?.status === 429 || e?.status === 503 || e?.status >= 500;
+
+// Retry transient Gemini errors (429/5xx) with backoff, then try the fallback model.
+async function createWithRetry(c, params) {
+  const models = [env.geminiModel, env.geminiFallbackModel].filter(Boolean);
+  let lastErr;
+  for (const model of models) {
+    for (let i = 0; i < 3; i += 1) {
+      try {
+        return await c.interactions.create({ ...params, model });
+      } catch (e) {
+        lastErr = e;
+        if (!isRetryable(e)) throw e;
+        await sleep(1000 * 2 ** i); // 1s, 2s, 4s
+      }
+    }
+  }
+  throw lastErr;
+}
+
 /**
  * Call Gemini, require strict JSON, validate with zod, retry once on invalid output.
  */
@@ -43,8 +64,7 @@ async function callJSON({ system, user, schema, maxTokens = 4096 }) {
   for (let attempt = 0; attempt < 2; attempt += 1) {
     let text = '';
     try {
-      const resp = await c.interactions.create({
-        model: env.geminiModel,
+      const resp = await createWithRetry(c, {
         input,
         system_instruction: system + JSON_RULES,
         response_format: {
