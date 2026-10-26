@@ -10,6 +10,7 @@ const env = {
   jwtResetSecret: process.env.JWT_RESET_SECRET || 'dev-reset-secret-change-me',
   geminiKey: process.env.GEMINI_API_KEY,
   geminiModel: process.env.GEMINI_MODEL || 'gemini-3.8-flash',
+  geminiFallbackModel: process.env.GEMINI_FALLBACK_MODEL, // <-- NEW LINE
   clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
   smtpHost: process.env.SMTP_HOST,
   smtpPort: Number(process.env.SMTP_PORT || 587),
