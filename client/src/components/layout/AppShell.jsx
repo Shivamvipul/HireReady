@@ -16,7 +16,7 @@ const NAV = [
 export const Logo = ({ className }) => (
   <Link to="/" className={cn('flex items-center gap-2 font-display text-lg font-extrabold', className)}>
     <span className="grid h-8 w-8 place-items-center rounded-xl bg-accent-strong text-white"><Sparkles className="h-4 w-4" aria-hidden /></span>
-    HireRead<span className="text-accent">AI</span>
+    HireReady<span className="text-accent">AI</span>
   </Link>
 );
 

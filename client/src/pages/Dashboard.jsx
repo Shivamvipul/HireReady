@@ -55,7 +55,7 @@ export default function Dashboard() {
             <Card>
               <h2 className="mb-4 flex items-center gap-2 font-semibold"><Activity className="h-4 w-4 text-accent" aria-hidden />Recent activity</h2>
               {!d ? <div className="space-y-2"><Skeleton className="h-10" /><Skeleton className="h-10" /><Skeleton className="h-10" /></div>
-                : d.activity.length === 0 ? <EmptyState title="Nothing here yet" text="Everything you create in HireRead shows up here." />
+                : d.activity.length === 0 ? <EmptyState title="Nothing here yet" text="Everything you create in HireReady shows up here." />
                 : <ul className="divide-y divide-line">{d.activity.map((a) => {
                   const I = ICON[a.type];
                   return <li key={`${a.type}${a.id}`}><Link to={ROUTE[a.type](a)} className="flex items-center gap-3 rounded-lg py-3 hover:bg-raised/60"><I className="h-4 w-4 shrink-0 text-accent" aria-hidden /><span className="min-w-0 flex-1 truncate text-sm">{a.title}</span><span className="text-xs text-dim">{a.detail}</span><span className="w-16 text-right text-xs text-dim">{timeAgo(a.at)}</span></Link></li>;

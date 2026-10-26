@@ -163,7 +163,7 @@ export default function Builder() {
               <label className="label">Spacing
                 <select className="input mt-1" value={doc.settings.spacing} onChange={(e) => setSettings({ ...doc.settings, spacing: e.target.value })}><option value="template">Template default</option><option value="compact">Compact</option><option value="comfortable">Comfortable</option><option value="airy">Airy</option></select></label>
             </div>
-            <label className="mt-3 flex items-center gap-2 text-sm"><input type="checkbox" className="h-4 w-4 accent-accent" checked={doc.settings.footerTag !== false} onChange={(e) => setSettings({ ...doc.settings, footerTag: e.target.checked })} />Show "Made with HireRead AI" footer</label>
+            <label className="mt-3 flex items-center gap-2 text-sm"><input type="checkbox" className="h-4 w-4 accent-accent" checked={doc.settings.footerTag !== false} onChange={(e) => setSettings({ ...doc.settings, footerTag: e.target.checked })} />Show "Made with HireReady AI" footer</label>
           </Card>
 
           <EditorForm data={doc.data} settings={doc.settings} order={order} onData={(d) => patch({ data: d })} onSettings={setSettings}

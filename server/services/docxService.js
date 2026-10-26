@@ -80,10 +80,10 @@ async function buildDocx(resume) {
 
   const footer = s.footerTag === false
     ? undefined
-    : { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [run('Made with HireRead AI', { size: 16, color: '888888' })] })] }) };
+    : { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [run('Made with HireReady AI', { size: 16, color: '888888' })] })] }) };
 
   const doc = new Document({
-    creator: 'HireRead AI',
+    creator: 'HireReady AI',
     title: resume.title,
     sections: [{ properties: { page: { margin: { top: 720, bottom: 720, left: 900, right: 900 } } }, footers: footer, children: out }],
   });

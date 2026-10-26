@@ -34,7 +34,7 @@ const ResumeRenderer = forwardRef(function ResumeRenderer({ data, settings = {},
     >
       <div style={{ flex: 1 }}><Layout d={data} ctx={ctx} photo={photo} order={order} /></div>
       {settings.footerTag !== false && (
-        <div className="rr-footer" style={{ textAlign: 'center', fontSize: 9, color: '#9ca3af', padding: '8px 0 12px' }}>Made with HireRead AI</div>
+        <div className="rr-footer" style={{ textAlign: 'center', fontSize: 9, color: '#9ca3af', padding: '8px 0 12px' }}>Made with HireReady AI</div>
       )}
     </div>
   );

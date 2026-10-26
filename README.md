@@ -1,4 +1,4 @@
-# HireRead AI
+# HireReady AI
 
 AI career-prep platform: ATS resume checker, interview prep, a 48-template resume builder and a LinkedIn profile optimizer.
 MERN stack (MongoDB Atlas, Express, React 18 + Vite, Node) with the Google Gemini API on the backend only.
@@ -10,7 +10,7 @@ MERN stack (MongoDB Atlas, Express, React 18 + Vite, Node) with the Google Gemin
 
 ## Project layout
 ```
-hireread-ai/
+hireready-ai/
 ├── client/   React app (pages, components/{ui,layout,charts,ats,interview,builder,linkedin}, templates, store, api)
 └── server/   Express API (config, controllers, routes, models, middleware, services, prompts, utils)
 ```
@@ -20,7 +20,7 @@ hireread-ai/
 2. Database Access: add a database user (username and password).
 3. Network Access: add your IP address. For Render/Railway use `0.0.0.0/0` and rely on the strong DB password.
 4. Connect, Drivers: copy the connection string and put your user and password in it, with a database name:
-   `mongodb+srv://USER:PASSWORD@cluster0.xxxxx.mongodb.net/hireread?retryWrites=true&w=majority`
+   `mongodb+srv://USER:PASSWORD@cluster0.xxxxx.mongodb.net/hireready?retryWrites=true&w=majority`
 
 ## 2. Environment
 ```bash

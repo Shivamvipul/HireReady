@@ -86,7 +86,7 @@ export default function Landing() {
             <div className="landing-section-heading">
               <p className="landing-eyebrow">One story. Every step.</p>
               <h2 id="suite-title">A job search toolkit that works together.</h2>
-              <p>Your resume is the starting point. HireRead helps you carry it through the rest of the process.</p>
+              <p>Your resume is the starting point. HireReady helps you carry it through the rest of the process.</p>
             </div>
             <div className="landing-tool-grid">
               {TOOLS.map(({ icon: Icon, number, name, text, link, action }) => (
@@ -125,7 +125,7 @@ export default function Landing() {
             <div className="landing-integrity-copy">
               <p className="landing-eyebrow">Your story, only clearer</p>
               <h2 id="integrity-title">AI can help with the words. The experience is always yours.</h2>
-              <p>HireRead reshapes what you provide. It will not add jobs, degrees, certifications, skills, or numbers you did not give it. When a result needs a real metric, it asks you to supply one.</p>
+              <p>HireReady reshapes what you provide. It will not add jobs, degrees, certifications, skills, or numbers you did not give it. When a result needs a real metric, it asks you to supply one.</p>
             </div>
             <Link to="/register" className="landing-integrity-link">Start with your resume <ArrowUpRight size={16} aria-hidden="true" /></Link>
           </div>
@@ -142,7 +142,7 @@ export default function Landing() {
       </main>
 
       <footer className="landing-footer">
-        <div className="landing-container"><Logo className="landing-logo" /><span>Build a career story that is still yours.</span><span>HireRead AI</span></div>
+        <div className="landing-container"><Logo className="landing-logo" /><span>Build a career story that is still yours.</span><span>HireReady AI</span></div>
       </footer>
     </div>
   );

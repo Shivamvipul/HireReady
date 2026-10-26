@@ -12,9 +12,9 @@ export default function PublicResume() {
   const [r, setR] = useState(null);
   const [err, setErr] = useState('');
   useEffect(() => { resumes.getPublic(slug).then(setR).catch((e) => setErr(errMsg(e))); }, [slug]);
-  useEffect(() => { if (r) document.title = `${r.data?.contact?.name || 'Resume'} | HireRead AI`; }, [r]);
+  useEffect(() => { if (r) document.title = `${r.data?.contact?.name || 'Resume'} | HireReady AI`; }, [r]);
 
-  if (err) return <div className="mx-auto max-w-md p-6"><ErrorState message={err} /><p className="mt-4 text-center text-sm"><Link className="text-accent underline" to="/">Go to HireRead AI</Link></p></div>;
+  if (err) return <div className="mx-auto max-w-md p-6"><ErrorState message={err} /><p className="mt-4 text-center text-sm"><Link className="text-accent underline" to="/">Go to HireReady AI</Link></p></div>;
   if (!r) return <div className="mx-auto max-w-3xl p-6"><Skeleton className="h-[80vh]" /></div>;
   const tpl = templates.find((t) => t.id === r.templateId) || templates[0];
   const data = { ...emptyData(), ...r.data, contact: mergeContact(r.data?.contact || {}) };

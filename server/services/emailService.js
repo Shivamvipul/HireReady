@@ -15,13 +15,13 @@ const transport = env.smtpHost && env.smtpUser && env.smtpPass
 
 exports.sendPasswordResetEmail = async ({ to, name, token, resetUrl }) => {
   const baseUrl = resetUrl || `${env.clientUrl}/reset-password?token=${encodeURIComponent(token)}`;
-  const subject = 'Reset your HireRead password';
-  const text = `Hi ${name || 'there'},\n\nWe received a request to reset your HireRead password.\n\nOpen this link to continue: ${baseUrl}\n\nIf you did not request this, you can ignore this email.\n`;
+  const subject = 'Reset your HireReady password';
+  const text = `Hi ${name || 'there'},\n\nWe received a request to reset your HireReady password.\n\nOpen this link to continue: ${baseUrl}\n\nIf you did not request this, you can ignore this email.\n`;
   const html = `
     <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #1f2937;">
       <h2 style="margin-bottom: 12px;">Password reset request</h2>
       <p>Hi ${name || 'there'},</p>
-      <p>We received a request to reset your HireRead password.</p>
+      <p>We received a request to reset your HireReady password.</p>
       <p>
         <a href="${baseUrl}" style="display: inline-block; padding: 10px 16px; background: #2563eb; color: white; border-radius: 6px; text-decoration: none;">
           Reset your password

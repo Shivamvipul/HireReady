@@ -42,7 +42,7 @@ export default function Linkedin() {
       <PageHeader title="LinkedIn profile optimizer" text="Get a stronger headline, About section and a 30-day plan, built from the content you provide." />
       <div className="mb-5 flex gap-3 rounded-2xl border border-accent/25 bg-accent-soft p-4 text-sm">
         <Info className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
-        <p>LinkedIn does not allow scraping, so HireRead analyzes your most recently updated saved resume. Your profile URL is only used for custom-URL tips.</p>
+        <p>LinkedIn does not allow scraping, so HireReady analyzes your most recently updated saved resume. Your profile URL is only used for custom-URL tips.</p>
       </div>
 
       <Card className="mb-8">
